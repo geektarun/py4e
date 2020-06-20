@@ -29,7 +29,7 @@ for line in fhand:
             cur.execute('''INSERT INTO Counts (org, count) VALUES (?, 1)''', (org,))
         else:
             cur.execute('''UPDATE Counts SET count = count + 1 WHERE org = ?''', (org,))
-conn.commit()
+            conn.commit()
 
 sqlstr = '''SELECT org, count FROM Counts ORDER BY count DESC'''
 
